@@ -1,8 +1,10 @@
 import express from "express";
-import { addProfileController } from "../controllers/profileControllers.js";
+import { addProfileController, deleteProfileController, editProfileController } from "../controllers/profileControllers.js";
 
 const profileRouter = express.Router()
 
 profileRouter.post("/addProfile" , addProfileController)
+profileRouter.delete("/:id", deleteProfileController)
+profileRouter.put("/:id", editProfileController)
 
 export default profileRouter
